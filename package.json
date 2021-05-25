@@ -1,0 +1,31 @@
+{
+  "name": "naloga-timeline",
+  "version": "1.0.0",
+  "description": "naloga za Rokus",
+  "main": "bin/www.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rock-son/naloga-timeline.git"
+  },
+  "keywords": [
+    "timeline"
+  ],
+  "author": "Rok Zigon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rock-son/naloga-timeline/issues"
+  },
+  "homepage": "https://github.com/Rock-son/naloga-timeline#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "helmet": "^4.6.0",
+    "serve-favicon": "^2.5.0",
+    "serve-static": "^1.14.1"
+  }
+}
