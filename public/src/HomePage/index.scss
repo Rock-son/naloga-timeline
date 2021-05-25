@@ -1,0 +1,105 @@
+#root {
+	display: flex;
+  	flex-direction: column;
+	position: relative;
+	padding: 0 15%;
+	width: 100vw;
+	height: 100vh;
+	font-size: 16px;
+}
+  
+
+main {
+	padding: 5%;
+	min-height: 400px;
+	color: #666;
+	background-color: #fed700;
+	& .card {
+		display: flex;
+		font-size: 150%;
+		&__image {
+			display: inline-block;
+			width: 45%;
+			height: auto;
+		}
+		&__text-container {
+			position: relative;
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 50%;
+			text-align: left;
+			padding: 0 5%;
+			box-sizing: border-box;
+			font-family: Arial;
+			letter-spacing: 1px;
+			line-height: 130%;
+			&__cancel-btn {
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: right;
+				font-size: 150%;
+				& .far {
+					color: #888;
+					background-color: white;
+					border-radius: 50%;
+					background: radial-gradient(white 60%,transparent 60%);
+				}
+			}
+			&__paragraph {
+				display: block;
+			}
+			&__description {
+				display: flex;
+				padding: 5% 0;
+				& .fa:before  {
+					font-size: 70%;
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+}
+
+nav {
+	flex: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+	width: 100%;
+	background-color: white;
+	& .navigation__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: baseline;
+		margin-top: 2%;
+		&__box {
+			text-align: center;
+			padding: 0 10%;
+			width: 100%;
+			&__button {
+				width: 3.5rem;
+				height: 3.5rem;
+				border: 3px solid #888;
+				border-radius: 50%;
+
+				$colors: "orange", "lightgreen", "violet", "red", "dodgerblue";
+				@each $color in $colors {
+					&.#{$color} {
+						background-color: #{$color}
+					}
+				}
+			}
+			&__description {
+				margin-top: 10%;
+				color: #888;
+				white-space: nowrap;
+				font-size: 150%;
+			}
+		}
+	}
+}
