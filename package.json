@@ -4,7 +4,8 @@
   "description": "naloga za Rokus",
   "main": "bin/www.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node bin/www.js"
   },
   "repository": {
     "type": "git",
