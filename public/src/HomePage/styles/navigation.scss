@@ -75,7 +75,47 @@ nav {
 				position: absolute;
 				text-align: center;
 				width: 100%;
-				top: -100%;
+				top: -75%;
+				@media (min-height: 580px) {
+					& {
+						top: -85%;	
+					}
+				}
+				@media (min-height: 620px) {
+					& {
+						top: -95%;	
+					}
+				}
+				@media (min-height: 650px) {
+					& {
+						top: -105%;	
+					}
+				}
+				@media (min-height: 680px) {
+					& {
+						top: -115%;	
+					}
+				}
+				@media (min-height: 720px) {
+					& {
+						top: -125%;	
+					}
+				}
+				@media (min-height: 751px) {
+					& {
+						top: -80%;	
+					}
+				}
+				@media (min-height: 810px) {
+					& {
+						top: -90%;	
+					}
+				}
+				@media (min-height: 900px) {
+					& {
+						top: -100%;	
+					}
+				}
 				& span {
 					position: absolute;
 					width: 3rem;
