@@ -59,11 +59,22 @@ main {
 		}
 		& .card {
 			display: flex;
-			font-size: 150%;
-			padding: 0 5%;;
+			font-size: 100%;
+			padding: 0 5%;
 			min-width: fit-content;
 			height: fit-content;
 			background-color: $cardColor;
+			height: 100%;
+			@media (min-height: 650px) {
+				& {
+					font-size: 120%;
+				}
+			}
+			@media (min-height: 800px) {
+				& {
+					font-size: 150%;
+				}
+			}
 			&:first-child {
 				width: 100%;
 				text-align: center;
@@ -76,6 +87,7 @@ main {
 				display: inline-block;
 				width: 45%;
 				height: auto;
+				object-fit: cover;
 			}
 			&__text-container {
 				position: relative;
