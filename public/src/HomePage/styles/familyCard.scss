@@ -1,0 +1,95 @@
+
+$cardColor: #fed700;
+
+main {
+	padding: 5%;
+	min-height: 400px;
+	height: 60vh;
+	color: #666;
+	background-color: $cardColor;	
+	@media (min-height: 700px) {
+		& {
+		  height: 65vh;
+		}
+	}
+	@media (min-width: 900px) {
+		& {
+			height: 70vh;
+		}
+	}
+	& .cards {
+		position: relative;
+		list-style: none;
+		height: 100%;
+		& .card {
+			display: flex;
+			position: absolute;
+			font-size: 150%;
+			height: 100%;
+			&:first-child {
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+			&__image {
+				display: inline-block;
+				width: 45%;
+				height: auto;
+			}
+			&__text-container {
+				position: relative;
+				display: inline-flex;
+				flex-direction: column;
+				justify-content: center;
+				width: 55%;
+				height: 100%;
+				text-align: left;
+				padding: 0 5%;
+				box-sizing: border-box;
+				font-family: Arial;
+				letter-spacing: 1px;
+				line-height: 130%;
+				&:first-child {
+					width: 80%;
+					text-align: center;
+				}
+				&__cancel-btn {
+					position: absolute;
+					top: 0;
+					right: 0;
+					text-align: right;
+					font-size: 150%;
+					&:hover {
+						cursor: pointer;
+					}
+					& .far {
+						color: #888;
+						background-color: white;
+						border-radius: 50%;
+						background: radial-gradient(white 60%,transparent 60%);
+						&:active {
+							background: radial-gradient(#888 60%,transparent 60%);
+						}
+					}
+				}
+				&__caption {
+					color: #555;
+					font-size: 160%;
+					font-weight: 900;
+					padding-bottom: 5%;
+				}
+				&__paragraph {
+					display: block;
+				}
+				&__description {
+					display: flex;
+					padding: 5% 0;
+					& .fa:before  {
+						font-size: 70%;
+						padding-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
