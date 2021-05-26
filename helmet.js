@@ -8,6 +8,7 @@ module.exports = function a(app) {
 		setTo: 'PHP 7.2.0'
 	}));
 	app.use(helmet.contentSecurityPolicy({
+		useDefaults: true,
 		directives: {
 			"defaultSrc": 	[ "'self'" ],
 			"connectSrc":	[ "'self'", "https://www.google-analytics.com/", "http://localhost:5000" ],
@@ -18,20 +19,11 @@ module.exports = function a(app) {
 			"objectSrc": 	[ "'none'"],
 			"sandbox":		[ "allow-modals", "allow-forms", "allow-scripts", "allow-same-origin", "allow-popups" ],
 			"reportUri": 	'/report-violation',
-			"upgradeInsecureRequests": true
+			"upgradeInsecureRequests": [true]
 		},
 		// set up a POST route for notifying / logging data to server
 		// "reportOnly=true" - policy will not be enforced
-		reportOnly: false,
-		// This module will detect common mistakes in your directives and throw errors
-		// if it finds any. To disable this, enable "loose mode".
-		loose: true,
-		// Set to true if you want to blindly set all headers: Content-Security-Policy,
-		// X-WebKit-CSP, and X-Content-Security-Policy.
-		setAllHeaders: false,
-
-		// Set to true if you want to disable CSP on Android where it can be buggy.
-		disableAndroid: true,
+		reportOnly: false
 	}));
 
 	const corsOptions = {

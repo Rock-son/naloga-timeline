@@ -25,8 +25,8 @@ app.use(limiter);
 // SET SETTINGS
 app.set("env", "production");
 // ROUTES
-app.use(serveStatic(path.join(__dirname, "../public/build/"), { index: false }));
-app.use(favicon(path.join(__dirname, '../public/build/', 'favicon.ico')));
+app.use(serveStatic(path.join(__dirname, "./public/build/"), { index: false }));
+app.use(favicon(path.join(__dirname, './public/build/', 'favicon.ico')));
 // BODY PARSERS
 app.use(bodyParser.json({ type: "application/json" }));
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -50,7 +50,7 @@ app.post("/report-violation",
 
 // CHECK AUTHORIZATION
 app.get("*", (req, res, next) => {
-	res.sendFile(path.join(__dirname, "../public/build", "index.html"));
+	res.sendFile(path.join(__dirname, "./public/build", "index.html"));
 });
 
 module.exports = app;
