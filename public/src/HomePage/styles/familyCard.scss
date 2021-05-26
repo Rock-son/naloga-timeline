@@ -1,12 +1,14 @@
-
+$cards: 0, 1, 2, 3, 4, 5;
 $cardColor: #fed700;
+$background-color: #888;
 
 main {
-	padding: 5%;
+	position: relative;
+	padding: 5% 0;
 	min-height: 400px;
 	height: 60vh;
 	color: #666;
-	background-color: $cardColor;	
+	background-color: $cardColor;
 	@media (min-height: 700px) {
 		& {
 		  height: 65vh;
@@ -17,19 +19,58 @@ main {
 			height: 70vh;
 		}
 	}
+	&:after {
+		position: absolute;
+		z-index: 10;
+		content: " ";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: $background-color;
+		transform: translateX(-100%);
+	}
+	&:before {
+		position: absolute;
+		z-index: 10;
+		content: " ";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: $background-color;
+		transform: translateX(100%);
+	}
 	& .cards {
+		display: flex;
+		flex-direction: row;
 		position: relative;
 		list-style: none;
 		height: 100%;
+		width: 100%;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 0;
+		transition: left 2s;
+		@each $card in $cards {
+			&.card-#{$card} {
+				left: calc(-100% * #{$card});
+			}
+		}
 		& .card {
 			display: flex;
-			position: absolute;
 			font-size: 150%;
-			height: 100%;
+			padding: 0 5%;;
+			min-width: fit-content;
+			height: fit-content;
+			background-color: $cardColor;
 			&:first-child {
 				width: 100%;
 				text-align: center;
 				justify-content: center;
+				top: 0;
+				bottom: 0;
+				margin: auto;
 			}
 			&__image {
 				display: inline-block;
@@ -63,12 +104,12 @@ main {
 						cursor: pointer;
 					}
 					& .far {
-						color: #888;
+						color: $background-color;
 						background-color: white;
 						border-radius: 50%;
 						background: radial-gradient(white 60%,transparent 60%);
 						&:active {
-							background: radial-gradient(#888 60%,transparent 60%);
+							background: radial-gradient($background-color 60%,transparent 60%);
 						}
 					}
 				}
