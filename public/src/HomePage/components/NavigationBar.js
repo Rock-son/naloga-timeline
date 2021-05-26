@@ -8,15 +8,11 @@ import { familiesNavigation } from "../helpers";
  * 
  * @returns navigation bar, with buttons, supertext and navigation and ui logic
  */
-const NavigationBar = () => {
+const NavigationBar = props => {
+	const { toggleButton, btnActiveId } = props;
 
-	const [btnActiveId, setBtnActiveId] = useState(0);
 	const [btnHoveredId, setBtnHoveredId] = useState(0);
 
-	const toggleButton = e => {
-		const targetId = e.currentTarget.id || 0;
-		setBtnActiveId(btnActiveId === targetId ? 0 : targetId );
-	}
 	const onMouseEnter = e => {
 		const targetId = e.currentTarget.id || 0;
 		setBtnHoveredId(btnHoveredId === targetId ? 0 : targetId );
