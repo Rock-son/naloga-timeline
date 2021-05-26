@@ -1,3 +1,5 @@
+import image from "../assets/druzina4.jpg";
+
 let text = "V družinah meščanov so veliko pozornost ";
 	text += "namenili vzgoji in izobraževanju otrok. Oče ";
 	text += "je bil glavna oseba v družini, odgovorna za ";
@@ -8,6 +10,6 @@ let text = "V družinah meščanov so veliko pozornost ";
 	text += "delavske družine so živele skromno. Na polju ";
 	text += "in v tovarnah so delali vsi družinski člani, tudi otroci.";
 
-const exportedTextObject = { text, description: "Družina za mizo" };
+const exportedTextObject = { text, description: "Družina za mizo", image };
 
 export default exportedTextObject;

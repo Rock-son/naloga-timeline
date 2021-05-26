@@ -1,3 +1,5 @@
+import image from "../assets/druzina2.jpg";
+
 let text = "V družini so odločali moški. Ženske so bile ";
 	text += "podrejene očetu, po poroki pa možu. Največ ";
 	text += "ljudi se je preživljalo z obdelovanjem zemlje, ";
@@ -8,6 +10,6 @@ let text = "V družini so odločali moški. Ženske so bile ";
 	text += "s svojimi prijateljicami, medtem ko so ženske ";
 	text += "na kmetijah opravljale kmečka in gospodinjska";
 
-const exportedTextObject = { text, description: "Rimljanska družina" };
+const exportedTextObject = { text, description: "Rimljanska družina", image };
 
 export default exportedTextObject;

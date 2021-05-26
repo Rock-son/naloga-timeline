@@ -1,3 +1,5 @@
+import image from "../assets/druzina3.jpg";
+
 let text = "Poroke so bile največkrat dogovorjene med ";
 	text += "starši, ko sta bila bodoča zakonca še otroka. ";
 	text += "V družini je imel oče neomejeno oblast nad ";
@@ -6,6 +8,6 @@ let text = "Poroke so bile največkrat dogovorjene med ";
 	text += "Kmečke družine, ki so prevladovale, so dneve ";
 	text += "preživljale ob delu na polju.";
 
-const exportedTextObject = { text, description: "Družina na polju" };
+const exportedTextObject = { text, description: "Družina na polju", image };
 
 export default exportedTextObject;
