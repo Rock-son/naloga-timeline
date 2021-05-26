@@ -4,15 +4,24 @@ import NavigationElement from "./NavigationElement";
 import { familiesNavigation } from "../helpers";
 
 
-
+/**
+ * 
+ * @returns navigation bar, with buttons, supertext and navigation and ui logic
+ */
 const NavigationBar = () => {
 
 	const [btnActiveId, setBtnActiveId] = useState(0);
+	const [btnHoveredId, setBtnHoveredId] = useState(0);
 
-	const selectButton = e => {
+	const toggleButton = e => {
 		const targetId = e.currentTarget.id || 0;
 		setBtnActiveId(btnActiveId === targetId ? 0 : targetId );
 	}
+	const onMouseEnter = e => {
+		const targetId = e.currentTarget.id || 0;
+		setBtnHoveredId(btnHoveredId === targetId ? 0 : targetId );
+	}
+	const onMouseLeave = () => setBtnHoveredId(0)
 
 	return (
 		<div className="navigation__container">
@@ -21,7 +30,7 @@ const NavigationBar = () => {
 					id = 0, 
 					description = "Leto x", 
 					color = "black", 
-					superText = "Pred veliko let"
+					superscript = "Pred neskončno let"
 				
 				} = obj;
 					return (
@@ -30,14 +39,17 @@ const NavigationBar = () => {
 							id={id}
 							description={description}
 							color={color}
-							superText={superText}
+							superscript={superscript}
 							btnActiveId={btnActiveId}
-							onClick={selectButton}
+							btnHoveredId={btnHoveredId}
+							toggleButton={toggleButton}
+							onMouseEnter={onMouseEnter}
+							onMouseLeave={onMouseLeave}
 						/>
 					);
 				})
 			}
-		</div>
+		</div> 
 	);
 }
 
