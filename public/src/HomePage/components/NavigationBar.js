@@ -21,7 +21,7 @@ const NavigationBar = props => {
 
 	return (
 		<div className="navigation__container">
-			{ familiesNavigation.map(obj => {
+			{ familiesNavigation.map((obj, idx) => {
 				const { 
 					id = 0, 
 					description = "Leto x", 
@@ -33,6 +33,7 @@ const NavigationBar = props => {
 						<NavigationElement
 							key={id}
 							id={id}
+							length={{ nrOfButtons: familiesNavigation.length, currentIndex: idx }}
 							description={description}
 							color={color}
 							superscript={superscript}

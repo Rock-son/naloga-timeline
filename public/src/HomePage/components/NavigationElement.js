@@ -1,15 +1,15 @@
 import React from 'react';
 
 const NavigationElement = props => {
-	const { id, description, color, superscript, btnActiveId, btnHoveredId, toggleButton, onMouseEnter, onMouseLeave } = props;
+	const { id, description, color, length: { nrOfButtons, currentIndex}, superscript, btnActiveId, btnHoveredId, toggleButton, onMouseEnter, onMouseLeave } = props;
 
 	return (
 		<div className="navigation__container__box">
-			<div className={`navigation__container__box__triangle ${+btnActiveId === +id ? "active" :  ""}`}>
-				<span className={`${+btnActiveId === +id ? "active" :  " "}`}></span>
-			</div>
-			<div className={`navigation__container__box__superscript ${+btnActiveId === +id ? "active" :  ""}`}>
-				{superscript}
+			<div className={`navigation__container__box__pointer-container ${+btnActiveId === +id ? "active" :  ""}`} >
+				<div className={`navigation__container__box__pointer-container__triangle ${+btnActiveId === +id ? "active" :  ""}`} />
+				<div className={`navigation__container__box__pointer-container__superscript ${+btnActiveId === +id ? "active" :  ""}`} >
+					{superscript}
+				</div>
 			</div>
 			<div 
 				className={`navigation__container__box__button ${color} ${+btnActiveId === +id ? "active" :  ""}`}
@@ -19,6 +19,7 @@ const NavigationElement = props => {
 				id={id} 
 			/>
 			<div className={`navigation__container__box__description ${+btnHoveredId === +id ? "active" :  ""}`}>{description}</div>
+			{ nrOfButtons > currentIndex + 1 ? <hr className="navigation__container__box__line" /> : ""}
 		</div>
 	);
 }
